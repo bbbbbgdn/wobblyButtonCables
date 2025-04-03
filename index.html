@@ -83,9 +83,8 @@
         // Listen for clicks anywhere on the page
         document.addEventListener('click', function(e) {
           console.log('Click detected in iframe', e);
-          // Send a message to the parent window (your Cargo site)
-          // IMPORTANT: Replace 'https://your-cargo-site.com' with the actual URL of your Cargo site
-          window.parent.postMessage('clicked', 'https://5759111.cargo.site');
+          // Send a message to the parent window (works with any parent website)
+          window.parent.postMessage('clicked', '*');
           console.log('Message sent to parent');
         });
     </script>
