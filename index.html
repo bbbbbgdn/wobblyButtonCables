@@ -81,12 +81,20 @@
         document.getElementById('glcanvas').addEventListener('touchmove', (e)=>{ e.preventDefault(); }, false);
 
         // Listen for clicks anywhere on the page
+        // document.addEventListener('click', function(e) {
+        //   console.log('Click detected in iframe', e);
+        //   // Send a message to the parent window (works with any parent website)
+        //   window.parent.postMessage('clicked', '*');
+        //   console.log('Message sent to parent');
+        // });
+
         document.addEventListener('click', function(e) {
-          console.log('Click detected in iframe', e);
-          // Send a message to the parent window (works with any parent website)
-          window.parent.postMessage('clicked', '*');
-          console.log('Message sent to parent');
-        });
+  window.parent.postMessage(
+    { type: 'clicked', id: 'iframe-1' },
+    'https://bbbbb.gdn'
+  );
+});
+
     </script>
 </body>
 </html>
